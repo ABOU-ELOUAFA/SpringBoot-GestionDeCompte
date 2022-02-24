@@ -2,12 +2,17 @@ package pack.com.entities;
 
 import java.util.Date;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+@Entity
+@DiscriminatorValue("CE")
 public class CompteEpargne extends Compte {
 
-	private Double taux;
+	private double taux;
 
-	public CompteEpargne(String numCompte, Date dateCreation, Double solde, Client client, Double taux) {
-		super(numCompte, dateCreation, solde, client);
+	public CompteEpargne(Date dateCreation, double solde, Client client, double taux) {
+		super(dateCreation, solde, client);
 		this.taux = taux;
 	}
 
@@ -16,11 +21,11 @@ public class CompteEpargne extends Compte {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Double getTaux() {
+	public double getTaux() {
 		return taux;
 	}
 
-	public void setTaux(Double taux) {
+	public void setTaux(double taux) {
 		this.taux = taux;
 	}
 
