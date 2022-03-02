@@ -23,7 +23,7 @@ import javax.persistence.OneToMany;
 public abstract class Compte implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int numCompte;
+	private Integer numCompte;
 	private Date dateCreation;
 	private double solde;
 	@ManyToOne

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html
+ xmlns:th="http://www.thymeleaf.org"
+ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+<head>
+<meta charset="utf-8" />
+<link
+ rel="stylesheet"
+ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+>
+<link
+ rel="stylesheet"
+ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+/>
+</head>
+<body>
+ <header>
+  <div class="container-fluid">
+   <nav class="navbar navbar-expand-lg  bg-dark">
+    <div class="collapse navbar-collapse">
+     <ul class=" nav navbar-nav ml-auto w-100 justify-content-start">
+      <li class="nav-item active"><a
+       class="nav-link"
+       th:href="@{/operation}"
+      > Operations </a></li>
+      <li class="nav-item"><a
+       class="nav-link"
+       th:href="@{/comptes}"
+      > Comptes </a></li>
+      <li class="nav-item"><a
+       class="nav-link"
+       th:href="@{/clients}"
+      > Clients </a></li>
+     </ul>
+     <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+      <li class="nav-item"><a
+       class="nav-link"
+       th:href="@{/login?logout}"
+      > <span class="glyphicon glyphicon-log-in"></span> Logout
+      </a></li>
+     </ul>
+    </div>
+   </nav>
+  </div>
+ </header>
+ <section layout:fragment="content"></section>
+ <footer>
+  <div class="navbar-fixed-bottom">
+   <small>@L'adresse .....</small>
+  </div>
+ </footer>
+</body>
+</html>

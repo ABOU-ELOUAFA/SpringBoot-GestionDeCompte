@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<link
+ rel="stylesheet"
+ type="text/css"
+ href="Css/Style.css"
+ th:href="@{/Css/Style.css}"
+/>
+<link
+ rel="stylesheet"
+ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+>
+<title>Athentification</title>
+</head>
+<body>
+ <div class="container">
+  <div class="login-container">
+   <div class="avatar"></div>
+   <div class="form-box">
+    <div
+     th:if="${param.error}"
+     class="red"
+    >Incorrect Username Or Password</div>
+    <div
+     th:if="${param.logout}"
+     class="re"
+    >You Have Been Logged Out</div>
+    <form
+     th:action="@{/login}"
+     method="post"
+    >
+     <input
+      name="username"
+      type="text"
+      placeholder="username"
+     > <input
+      type="password"
+      name="password"
+      placeholder="password"
+     >
+     <button
+      class="btn btn-info btn-block login"
+      type="submit"
+     >Login</button>
+    </form>
+   </div>
+  </div>
+ </div>
+</body>
+</html>
